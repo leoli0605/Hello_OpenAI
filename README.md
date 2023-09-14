@@ -4,7 +4,8 @@ This is a simple demo of OpenAI's [DALL-E](https://openai.com/blog/dall-e/) mode
 
 ### Links
 
-[API reference](https://platform.openai.com/docs/api-reference)
+- [API reference](https://platform.openai.com/docs/api-reference)
+- [API document (CN)](https://openai.xiniushu.com/)
 
 ### TODO
 
