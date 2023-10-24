@@ -12,19 +12,19 @@ async function main() {
     console.log(model);
   }
   /* This is the example how to chat with GPT-3 */
-  const chatCompletion = await openai.chat.completions.create({
+  const completion = await openai.chat.completions.create({
     messages: [{ role: "user", content: "Say this is a test" }],
     model: "gpt-3.5-turbo",
   });
-  console.log(chatCompletion);
-  console.log(chatCompletion.choices[0]);
+  console.log(completion);
+  console.log(completion.choices[0]);
   /* This is the example how to generate image with DALL-E */
-  const response = await openai.images.generate({
+  const image = await openai.images.generate({
     prompt: "a white siamese cat",
     n: 1,
     size: "1024x1024",
   });
-  image_url = response.data[0].url;
+  image_url = image.data[0].url;
   console.log(image_url);
   /* TODO: This is the example how to extend image with DALL-E */
   const edit_image = await openai.images.edit({
