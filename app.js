@@ -26,6 +26,14 @@ async function main() {
   });
   image_url = response.data[0].url;
   console.log(image_url);
+  /* TODO: This is the example how to extend image with DALL-E */
+  const edit_image = await openai.images.edit({
+    image: fs.createReadStream("otter.png"),
+    mask: fs.createReadStream("mask.png"),
+    prompt: "A cute baby sea otter wearing a beret",
+  });
+  edit_image_url = edit_image.data[0].url;
+  console.log(edit_image_url);
 }
 
 main();
