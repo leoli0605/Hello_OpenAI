@@ -6,6 +6,11 @@ async function main() {
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
   });
+  /* This is the example how to list engines */
+  const list = await openai.models.list();
+  for await (const model of list) {
+    console.log(model);
+  }
   /* This is the example how to chat with GPT-3 */
   const chatCompletion = await openai.chat.completions.create({
     messages: [{ role: "user", content: "Say this is a test" }],
